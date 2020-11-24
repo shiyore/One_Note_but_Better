@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,38 +17,32 @@ namespace CLCMilestone
     public partial class NewNote : Form
     {
         private Note note;
+        private NoteService service;
         public NewNote()
         {
             InitializeComponent();
             note = new Note();
         }
-        public NewNote(Note note)
+        public NewNote(NoteService service,Note note)
         {
             InitializeComponent();
             this.note = note;
+            this.service = service;
         }
 
         private void btn_SaveToCalendar_Click(object sender, EventArgs e)
         {
-            //note = new Note();
+            //set the note's text
             note.set_message(txtbox_NotePad.Text);
-            string jsonFile = JsonConvert.SerializeObject(note);
-
-            File.WriteAllText("notes.json", jsonFile);
-            Console.WriteLine(JsonConvert.DeserializeObject<Note>(File.ReadAllText("notes.json")).message);
+            //save the notes
+            service.add_note(note);
+            service.save_notes();
 
         }
 
         private void NewNote_FormClosed(object sender, FormClosedEventArgs e)
         {
-            string jsonFile = File.ReadAllText("notes.json");
-
-            JObject parsed = JObject.Parse(jsonFile);
-
-            foreach (var pair in parsed)
-            {
-                Console.WriteLine("{0}: {1}", pair.Key, pair.Value);
-            }
+           
         }
     }
 }

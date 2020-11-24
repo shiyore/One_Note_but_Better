@@ -31,7 +31,7 @@
             this.btn_back = new System.Windows.Forms.Button();
             this.lbl_Sort = new System.Windows.Forms.Label();
             this.btn_NewNote = new System.Windows.Forms.Button();
-            this.txtbox_note = new System.Windows.Forms.RichTextBox();
+            this.notes_list = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btn_back
@@ -64,21 +64,20 @@
             this.btn_NewNote.UseVisualStyleBackColor = true;
             this.btn_NewNote.Click += new System.EventHandler(this.btn_NewNote_Click);
             // 
-            // txtbox_note
+            // notes_list
             // 
-            this.txtbox_note.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtbox_note.Location = new System.Drawing.Point(142, 80);
-            this.txtbox_note.Name = "txtbox_note";
-            this.txtbox_note.Size = new System.Drawing.Size(311, 239);
-            this.txtbox_note.TabIndex = 4;
-            this.txtbox_note.Text = "";
+            this.notes_list.FormattingEnabled = true;
+            this.notes_list.Location = new System.Drawing.Point(107, 53);
+            this.notes_list.Name = "notes_list";
+            this.notes_list.Size = new System.Drawing.Size(410, 355);
+            this.notes_list.TabIndex = 5;
             // 
             // MainNotePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 442);
-            this.Controls.Add(this.txtbox_note);
+            this.Controls.Add(this.notes_list);
             this.Controls.Add(this.btn_NewNote);
             this.Controls.Add(this.lbl_Sort);
             this.Controls.Add(this.btn_back);
@@ -94,6 +93,6 @@
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Label lbl_Sort;
         private System.Windows.Forms.Button btn_NewNote;
-        private System.Windows.Forms.RichTextBox txtbox_note;
+        private System.Windows.Forms.ListBox notes_list;
     }
 }

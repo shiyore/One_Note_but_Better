@@ -4,11 +4,11 @@
 public class Note 
 {
     //Every note should be able to store a title, date, message content, and date created
+    public Guid ID { get; set; }
     public String title;
     public DateTime date;
     public DateTime date_created;
     public String message;
-
 
 	public Note()
 	{
@@ -16,6 +16,7 @@ public class Note
         message = "";
         date = DateTime.Now;
         date_created = DateTime.Now;
+        ID = System.Guid.NewGuid();
 	}
     public Note(String title, String message, DateTime date, DateTime date_created)
     {
@@ -23,6 +24,7 @@ public class Note
         this.message = message;
         this.date = date;
         this.date_created = date_created;
+        ID = System.Guid.NewGuid();
     }
 
     public String get_title()
@@ -57,4 +59,5 @@ public class Note
     {
         this.date_created = date_created;
     }
+    
 }

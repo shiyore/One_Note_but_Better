@@ -1,10 +1,12 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,25 +16,20 @@ namespace CLCMilestone
 {
     public partial class MainNotePage : Form
     {
-        public MainNotePage()
+        public NoteService service;
+        public MainNotePage(NoteService service)
         {
             InitializeComponent();
+            this.service = service;
+            notes_list.DataSource = service.notes   ;
+            notes_list.DisplayMember = "title";
         }
 
         private void btn_NewNote_Click(object sender, EventArgs e)
         {
             Note new_note = new Note();
-            NewNote note_page = new NewNote(new_note);
-            
+            NewNote note_page = new NewNote(service, new_note);
             note_page.Show();
-            string jsonFile = JsonConvert.SerializeObject(new_note);
-
-            JObject parsed = JObject.Parse(jsonFile);
-
-            foreach (var pair in parsed)
-            {
-                Console.WriteLine("{0}: {1}", pair.Key, pair.Value);
-            }
         }
     }
 }

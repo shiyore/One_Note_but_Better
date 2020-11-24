@@ -12,9 +12,12 @@ namespace CLCMilestone
 {
     public partial class Home : Form
     {
+        NoteService service = new NoteService();
         public Home()
         {
             InitializeComponent();
+            service.load_notes();
+            //Console.WriteLine(System.Guid.NewGuid());
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -29,14 +32,14 @@ namespace CLCMilestone
 
         private void btn_calandar_Click(object sender, EventArgs e)
         {
-            MainNotePage notesHome = new MainNotePage();
+            MainNotePage notesHome = new MainNotePage(service);
             //this.Hide();
             notesHome.Show();
         }
 
         private void btn_calendar_Click(object sender, EventArgs e)
         {
-            ViewCalender calender = new ViewCalender();
+            ViewCalender calender = new ViewCalender(service);
             calender.Show();
         }
     }
