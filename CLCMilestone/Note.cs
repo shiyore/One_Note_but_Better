@@ -59,5 +59,10 @@ public class Note
     {
         this.date_created = date_created;
     }
-    
+
+    public override string ToString()
+    {
+        return this.title;
+    }
+
 }

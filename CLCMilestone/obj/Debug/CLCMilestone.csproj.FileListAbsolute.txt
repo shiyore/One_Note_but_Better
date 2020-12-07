@@ -23,9 +23,9 @@ C:\Users\Shiyore\Downloads\CLCMilestone\CLCMilestone\obj\Debug\CLCMilestone.NewN
 C:\Users\Shiyore\Downloads\CLCMilestone\CLCMilestone\obj\Debug\CLCMilestone.Properties.Resources.resources
 C:\Users\Shiyore\Downloads\CLCMilestone\CLCMilestone\obj\Debug\CLCMilestone.ViewCalender.resources
 C:\Users\Shiyore\Downloads\CLCMilestone\CLCMilestone\obj\Debug\CLCMilestone.csproj.GenerateResource.Cache
-C:\Users\Shiyore\Downloads\CLCMilestone\CLCMilestone\obj\Debug\CLCMilestone.csproj.CoreCompileInputs.cache
 C:\Users\Shiyore\Downloads\CLCMilestone\CLCMilestone\obj\Debug\CLCMilestone.exe
 C:\Users\Shiyore\Downloads\CLCMilestone\CLCMilestone\obj\Debug\CLCMilestone.pdb
-C:\Users\Shiyore\Downloads\CLCMilestone\CLCMilestone\obj\Debug\CLCMilestone.csprojResolveAssemblyReference.cache
 C:\Users\Shiyore\Downloads\CLCMilestone\CLCMilestone\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Shiyore\Downloads\CLCMilestone\CLCMilestone\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Shiyore\Downloads\CLCMilestone\CLCMilestone\obj\Debug\CLCMilestone.csprojAssemblyReference.cache
+C:\Users\Shiyore\Downloads\CLCMilestone\CLCMilestone\obj\Debug\CLCMilestone.csproj.CopyComplete

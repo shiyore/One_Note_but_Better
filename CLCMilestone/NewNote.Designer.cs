@@ -32,6 +32,7 @@
             this.btn_SaveToCalendar = new System.Windows.Forms.Button();
             this.btn_Trash = new System.Windows.Forms.Button();
             this.txtbox_NotePad = new System.Windows.Forms.RichTextBox();
+            this.note_title = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button_Back
@@ -42,10 +43,11 @@
             this.button_Back.TabIndex = 0;
             this.button_Back.Text = "Back";
             this.button_Back.UseVisualStyleBackColor = true;
+            this.button_Back.Click += new System.EventHandler(this.button_Back_Click);
             // 
             // btn_SaveToCalendar
             // 
-            this.btn_SaveToCalendar.Location = new System.Drawing.Point(301, 15);
+            this.btn_SaveToCalendar.Location = new System.Drawing.Point(384, 12);
             this.btn_SaveToCalendar.Name = "btn_SaveToCalendar";
             this.btn_SaveToCalendar.Size = new System.Drawing.Size(156, 23);
             this.btn_SaveToCalendar.TabIndex = 2;
@@ -61,20 +63,31 @@
             this.btn_Trash.TabIndex = 3;
             this.btn_Trash.Text = "Trash";
             this.btn_Trash.UseVisualStyleBackColor = true;
+            this.btn_Trash.Click += new System.EventHandler(this.btn_Trash_Click);
             // 
             // txtbox_NotePad
             // 
-            this.txtbox_NotePad.Location = new System.Drawing.Point(26, 44);
+            this.txtbox_NotePad.Location = new System.Drawing.Point(26, 84);
             this.txtbox_NotePad.Name = "txtbox_NotePad";
-            this.txtbox_NotePad.Size = new System.Drawing.Size(495, 491);
+            this.txtbox_NotePad.Size = new System.Drawing.Size(495, 451);
             this.txtbox_NotePad.TabIndex = 4;
             this.txtbox_NotePad.Text = "";
+            // 
+            // note_title
+            // 
+            this.note_title.Location = new System.Drawing.Point(207, 58);
+            this.note_title.Name = "note_title";
+            this.note_title.Size = new System.Drawing.Size(148, 20);
+            this.note_title.TabIndex = 5;
+            this.note_title.Text = "Note Title";
+            this.note_title.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // NewNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 588);
+            this.Controls.Add(this.note_title);
             this.Controls.Add(this.txtbox_NotePad);
             this.Controls.Add(this.btn_Trash);
             this.Controls.Add(this.btn_SaveToCalendar);
@@ -83,6 +96,7 @@
             this.Text = "NewNote";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewNote_FormClosed);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -92,5 +106,6 @@
         private System.Windows.Forms.Button btn_SaveToCalendar;
         private System.Windows.Forms.Button btn_Trash;
         private System.Windows.Forms.RichTextBox txtbox_NotePad;
+        private System.Windows.Forms.TextBox note_title;
     }
 }

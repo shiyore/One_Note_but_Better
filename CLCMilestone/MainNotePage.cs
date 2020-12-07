@@ -31,5 +31,24 @@ namespace CLCMilestone
             NewNote note_page = new NewNote(service, new_note);
             note_page.Show();
         }
+        void notes_list_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int index = this.notes_list.IndexFromPoint(e.Location);
+            if (index != System.Windows.Forms.ListBox.NoMatches)
+            {
+                MessageBox.Show(index.ToString());
+            }
+        }
+
+        private void notes_list_MouseDoubleClick_1(object sender, MouseEventArgs e)
+        {
+            int index = this.notes_list.IndexFromPoint(e.Location);
+            if (index != System.Windows.Forms.ListBox.NoMatches)
+            {
+                NewNote edit_note = new NewNote(service, service.notes[index]);
+                edit_note.Show();
+                this.Close();
+            }
+        }
     }
 }

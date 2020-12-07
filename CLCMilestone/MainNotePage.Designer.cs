@@ -71,6 +71,7 @@
             this.notes_list.Name = "notes_list";
             this.notes_list.Size = new System.Drawing.Size(410, 355);
             this.notes_list.TabIndex = 5;
+            this.notes_list.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notes_list_MouseDoubleClick_1);
             // 
             // MainNotePage
             // 

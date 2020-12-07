@@ -53,4 +53,24 @@ public class NoteService
             notes.Add(note);
         }
     }
+
+    public void remove_note(Note note)
+    {
+        if (notes != null)
+        {
+            foreach (Note i in notes)
+            {
+                //if the ID's are the same, it replaces the info from the 
+                if (i.ID.Equals(note.ID))
+                {
+                    notes.Remove(i);
+                    break;
+                }
+
+            }
+        }
+        else
+        {
+        }
+    }
 }
