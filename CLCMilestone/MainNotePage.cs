@@ -57,9 +57,7 @@ namespace CLCMilestone
 
         private void lbl_Sort_Click(object sender, EventArgs e)
         {
-            List<Note> ordered_notes = this.service.notes.OrderBy(o => o.title).ToList();
-            notes_list.DataSource = ordered_notes;
-            notes_list.DisplayMember = "title";
+            
         }
 
         private void sort_type_SelectedIndexChanged(object sender, EventArgs e)
