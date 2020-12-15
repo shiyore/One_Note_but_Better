@@ -33,6 +33,7 @@
             this.btn_Trash = new System.Windows.Forms.Button();
             this.txtbox_NotePad = new System.Windows.Forms.RichTextBox();
             this.note_title = new System.Windows.Forms.TextBox();
+            this.date_picker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // button_Back
@@ -82,11 +83,20 @@
             this.note_title.Text = "Note Title";
             this.note_title.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // date_picker
+            // 
+            this.date_picker.Location = new System.Drawing.Point(178, 32);
+            this.date_picker.Name = "date_picker";
+            this.date_picker.Size = new System.Drawing.Size(200, 20);
+            this.date_picker.TabIndex = 6;
+            this.date_picker.ValueChanged += new System.EventHandler(this.date_picker_ValueChanged);
+            // 
             // NewNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 588);
+            this.Controls.Add(this.date_picker);
             this.Controls.Add(this.note_title);
             this.Controls.Add(this.txtbox_NotePad);
             this.Controls.Add(this.btn_Trash);
@@ -107,5 +117,6 @@
         private System.Windows.Forms.Button btn_Trash;
         private System.Windows.Forms.RichTextBox txtbox_NotePad;
         private System.Windows.Forms.TextBox note_title;
+        private System.Windows.Forms.DateTimePicker date_picker;
     }
 }
