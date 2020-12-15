@@ -18,6 +18,7 @@ namespace CLCMilestone
     {
         public NoteService service;
         private List<String> sort_methods = new List<string>(){"None","Title","Date", "Date Created"};
+        private List<Note> ordered_notes = new List<Note>();
         public MainNotePage(NoteService service)
         {
             InitializeComponent();
@@ -48,7 +49,7 @@ namespace CLCMilestone
             int index = this.notes_list.IndexFromPoint(e.Location);
             if (index != System.Windows.Forms.ListBox.NoMatches)
             {
-                NewNote edit_note = new NewNote(service, service.notes[index]);
+                NewNote edit_note = new NewNote(service, ordered_notes[index]);
                 edit_note.Show();
                 this.Close();
             }
@@ -63,7 +64,7 @@ namespace CLCMilestone
 
         private void sort_type_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<Note> ordered_notes = new List<Note>();
+            
             //Console.WriteLine(sort_type.Text);
 
             //Sorting the list based on sort method
