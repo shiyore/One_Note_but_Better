@@ -32,6 +32,7 @@
             this.lbl_Sort = new System.Windows.Forms.Label();
             this.btn_NewNote = new System.Windows.Forms.Button();
             this.notes_list = new System.Windows.Forms.ListBox();
+            this.sort_type = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btn_back
@@ -47,11 +48,12 @@
             // 
             this.lbl_Sort.AutoSize = true;
             this.lbl_Sort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Sort.Location = new System.Drawing.Point(525, 17);
+            this.lbl_Sort.Location = new System.Drawing.Point(469, 17);
             this.lbl_Sort.Name = "lbl_Sort";
-            this.lbl_Sort.Size = new System.Drawing.Size(43, 20);
+            this.lbl_Sort.Size = new System.Drawing.Size(63, 20);
             this.lbl_Sort.TabIndex = 2;
-            this.lbl_Sort.Text = "Sort ";
+            this.lbl_Sort.Text = "Sort by:";
+            this.lbl_Sort.Click += new System.EventHandler(this.lbl_Sort_Click);
             // 
             // btn_NewNote
             // 
@@ -73,11 +75,21 @@
             this.notes_list.TabIndex = 5;
             this.notes_list.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notes_list_MouseDoubleClick_1);
             // 
+            // sort_type
+            // 
+            this.sort_type.FormattingEnabled = true;
+            this.sort_type.Location = new System.Drawing.Point(539, 15);
+            this.sort_type.Name = "sort_type";
+            this.sort_type.Size = new System.Drawing.Size(94, 21);
+            this.sort_type.TabIndex = 6;
+            this.sort_type.SelectedIndexChanged += new System.EventHandler(this.sort_type_SelectedIndexChanged);
+            // 
             // MainNotePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 442);
+            this.Controls.Add(this.sort_type);
             this.Controls.Add(this.notes_list);
             this.Controls.Add(this.btn_NewNote);
             this.Controls.Add(this.lbl_Sort);
@@ -95,5 +107,6 @@
         private System.Windows.Forms.Label lbl_Sort;
         private System.Windows.Forms.Button btn_NewNote;
         private System.Windows.Forms.ListBox notes_list;
+        private System.Windows.Forms.ComboBox sort_type;
     }
 }

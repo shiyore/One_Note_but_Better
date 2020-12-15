@@ -30,6 +30,7 @@ namespace CLCMilestone
             this.service = service;
             txtbox_NotePad.Text = note.message;
             note_title.Text = note.title;
+            date_picker.Value = note.date;
         }
 
         private void btn_SaveToCalendar_Click(object sender, EventArgs e)
@@ -59,6 +60,12 @@ namespace CLCMilestone
         private void button_Back_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void date_picker_ValueChanged(object sender, EventArgs e)
+        {
+            this.note.set_date(date_picker.Value);
+            Console.WriteLine(" " + date_picker.Value);
         }
     }
 }
