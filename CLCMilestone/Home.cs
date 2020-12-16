@@ -39,8 +39,39 @@ namespace CLCMilestone
 
         private void btn_calendar_Click(object sender, EventArgs e)
         {
+          //  btn_calendar1.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             ViewCalender calender = new ViewCalender(service);
             calender.Show();
+            this.Visible = false;
+        }
+
+        private void btn_calendar_Click_1(object sender, EventArgs e)
+        {
+          //  btn_calendar1.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            ViewCalender calender = new ViewCalender(service);
+            calender.Show();
+            this.Visible = false;
+        }
+
+        private void btn_calandar_Click_1(object sender, EventArgs e)
+        {
+            MainNotePage notesHome = new MainNotePage(service);
+            //this.Hide();
+            notesHome.Show();
+            this.Visible = false;
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            Note new_note = new Note();
+            NewNote note_page = new NewNote(service, new_note);
+            note_page.Show();
+            this.Visible = false;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
