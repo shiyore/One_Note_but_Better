@@ -9,7 +9,7 @@ public class Note
     public DateTime date;
     public DateTime date_created;
     public String message;
-
+    
 	public Note()
 	{
         title = "Note Title";

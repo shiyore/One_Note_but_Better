@@ -31,6 +31,7 @@ namespace CLCMilestone
             txtbox_NotePad.Text = note.message;
             note_title.Text = note.title;
             date_picker.Value = note.date;
+
         }
 
         private void btn_SaveToCalendar_Click(object sender, EventArgs e)
@@ -42,6 +43,8 @@ namespace CLCMilestone
             service.add_note(note);
             service.save_notes();
 
+
+
         }
 
         private void NewNote_FormClosed(object sender, FormClosedEventArgs e)
@@ -52,9 +55,14 @@ namespace CLCMilestone
 
         private void btn_Trash_Click(object sender, EventArgs e)
         {
-            service.remove_note(this.note);
-            service.save_notes();
-            this.Close();
+
+            //service.remove_note(this.note);
+            //service.save_notes();
+
+       //     DeleteConfirmation deleteForm = new DeleteConfirmation(this.service, this.note);
+          //  this.Hide();
+           // deleteForm.Show();
+        
         }
 
         private void button_Back_Click(object sender, EventArgs e)
@@ -62,10 +70,52 @@ namespace CLCMilestone
             this.Close();
         }
 
-        private void date_picker_ValueChanged(object sender, EventArgs e)
+        private void lbl_Welcome_Click(object sender, EventArgs e)
         {
-            this.note.set_date(date_picker.Value);
-            Console.WriteLine(" " + date_picker.Value);
+
+        }
+        // delete button
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            DeleteConfirmation deleteForm = new DeleteConfirmation(this.service, this.note);
+            this.Hide();
+            deleteForm.Show();
+        }
+
+        // save note button
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            //set the note's text
+            note.set_message(txtbox_NotePad.Text);
+            note.set_title(note_title.Text);
+
+            note.date = date_picker.Value;
+            //save the notes
+            service.add_note(note);
+            service.save_notes();
+
+
+
+
+            MainNotePage SaveButtonPassingThrough = new MainNotePage(service);
+            SaveButtonPassingThrough.Show();
+            this.Visible = false;
+
+            // potentially will add a message box. 
+
+        }
+
+        private void Btn_BackIcon_Click(object sender, EventArgs e)
+        {
+            Home backHome = new Home();
+            backHome.Show();
+            this.Visible = false;
+           
+        }
+
+        private void txtbox_NotePad_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
